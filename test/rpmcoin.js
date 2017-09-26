@@ -91,14 +91,15 @@ contract('RPMCoin', function (accounts) {
   });
 
   describe("vote", function () {
-    let projectAddress = accounts[2];
+    let project1Address = accounts[1];
+    let project2Address = accounts[2];
 
     it("not allowed if not owner", function () {
       var instance;
 
       return RPMCoin.deployed().then(function (_instance) {
         instance = _instance;
-        return instance.vote(accounts[0], projectAddress, {from: accounts[1]});
+        return instance.vote(accounts[0], project1Address, {from: accounts[1]});
       }).then(assert.fail).catch(catchOpcodeErr);
     });
 
@@ -107,29 +108,111 @@ contract('RPMCoin', function (accounts) {
 
       return RPMCoin.deployed().then(function (_instance) {
         instance = _instance;
-        return instance.vote(accounts[0], projectAddress, {from: accounts[0]});
+        return instance.vote(accounts[0], project1Address, {from: accounts[0]});
+      }).then(function () {
+        return instance.vote(accounts[0], project2Address, {from: accounts[0]});
       }).then(function () {
         return instance.votesToUse.call(accounts[0]);
       }).then(function (votes) {
-        assert.equal(votes.toNumber(), 59, "Votes not decreased properly");
+        assert.equal(votes.toNumber(), 58, "Votes not decreased properly");
       }).then(function () {
-        return instance.upvotesReceivedThisWeek.call(projectAddress);
+        return instance.upvotesReceivedThisWeek.call(project1Address);
       }).then(function (votes) {
         assert.equal(votes.toNumber(), 1, "Upvotes not increased properly");
       }).then(function () {
-        return instance.vote(accounts[1], projectAddress, {from: accounts[1]});
+        return instance.upvotesReceivedThisWeek.call(project2Address);
+      }).then(function (votes) {
+        assert.equal(votes.toNumber(), 1, "Upvotes not increased properly");
+      }).then(function () {
+        return instance.vote(accounts[1], project1Address, {from: accounts[1]});
       }).then(function () {
         return instance.votesToUse.call(accounts[1]);
       }).then(function (votes) {
         assert.equal(votes.toNumber(), 39, "Votes not decreased properly");
       }).then(function () {
-        return instance.upvotesReceivedThisWeek.call(projectAddress);
+        return instance.upvotesReceivedThisWeek.call(project1Address);
       }).then(function (votes) {
         assert.equal(votes.toNumber(), 2, "Upvotes not increased properly");
+      }).then(function () {
+        return instance.upvotesReceivedThisWeek.call(project2Address);
+      }).then(function (votes) {
+        assert.equal(votes.toNumber(), 1, "Upvotes should not be increased");
+      }).then(function () {
+        return instance.totalUpvotesReceivedThisWeek.call();
+      }).then(function (totalVotes) {
+        assert.equal(totalVotes.toNumber(), 3, "Total Upvotes not increased properly");
       });
     });
 
+  });
+
+  describe("increaseSupply", function () {
+
+    it("not allowed if not owner", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.increaseSupply(2000, accounts[1], {from: accounts[1]});
+      }).then(assert.fail).catch(catchOpcodeErr);
+    });
+
+    it("increases supply", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.balanceOf.call(accounts[0]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 6000, "Initial Balance invalid");
+      }).then(function () {
+        return instance.increaseSupply(2000, accounts[0], {from: accounts[0]});
+      }).then(function () {
+        return instance.totalSupply.call();
+      }).then(function (totalSupply) {
+        assert.equal(totalSupply.toNumber(), 12000, "Total Supply not increased properly");
+      }).then(function () {
+        return instance.balanceOf.call(accounts[0]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 8000, "Balance not increased properly");
+      });
+    });
 
   });
+
+  describe("increaseSupply", function () {
+
+    it("not allowed if not owner", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.increaseSupply(2000, accounts[1], {from: accounts[1]});
+      }).then(assert.fail).catch(catchOpcodeErr);
+    });
+
+    it("increases supply", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.balanceOf.call(accounts[0]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 6000, "Initial Balance invalid");
+      }).then(function () {
+        return instance.increaseSupply(2000, accounts[0], {from: accounts[0]});
+      }).then(function () {
+        return instance.totalSupply.call();
+      }).then(function (totalSupply) {
+        assert.equal(totalSupply.toNumber(), 12000, "Total Supply not increased properly");
+      }).then(function () {
+        return instance.balanceOf.call(accounts[0]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 8000, "Balance not increased properly");
+      });
+    });
+
+  });
+
 
 });
