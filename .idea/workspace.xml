@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e64578e-3d48-47b0-9641-a8d685df65df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.eslintignore" afterPath="$PROJECT_DIR$/.eslintignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/Migrations.sol" afterPath="$PROJECT_DIR$/contracts/Migrations.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/RPMCoin.sol" afterPath="$PROJECT_DIR$/contracts/RPMCoin.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/StandardToken.sol" afterPath="$PROJECT_DIR$/contracts/StandardToken.sol" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/Token.sol" afterPath="$PROJECT_DIR$/contracts/Token.sol" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rpmcoin.js" afterPath="$PROJECT_DIR$/test/rpmcoin.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +19,8 @@
       <file leaf-file-name="RPMCoin.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/RPMCoin.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="78" column="22" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="22" />
+            <state relative-caret-position="307">
+              <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -36,8 +29,8 @@
       <file leaf-file-name="rpmcoin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/rpmcoin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="123" column="68" lean-forward="false" selection-start-line="123" selection-start-column="53" selection-end-line="123" selection-end-column="68" />
+            <state relative-caret-position="328">
+              <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -89,7 +82,7 @@
       <file leaf-file-name="StandardToken.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/StandardToken.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
+            <state relative-caret-position="98">
               <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
@@ -110,7 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>account</find>
       <find>to</find>
       <find>Meta</find>
       <find>getBalance</find>
@@ -139,6 +131,7 @@
       <find>addVoterAddress</find>
       <find>owner</find>
       <find>increaseSupply</find>
+      <find>projectAddress</find>
       <find>totalSupply</find>
     </findStrings>
     <replaceStrings>
@@ -277,15 +270,16 @@
       <option name="presentableId" value="Default" />
       <updated>1506004592324</updated>
       <workItem from="1506004593554" duration="5160000" />
-      <workItem from="1506331661602" duration="16710000" />
+      <workItem from="1506331661602" duration="17619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21870000" />
+    <option name="totallyTimeSpent" value="22779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1698379" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -294,7 +288,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24807198" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24807198" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32390746" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -534,7 +528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/StandardToken.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
+        <state relative-caret-position="98">
           <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
@@ -542,16 +536,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/RPMCoin.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="78" column="22" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="22" />
+        <state relative-caret-position="307">
+          <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/rpmcoin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="123" column="68" lean-forward="false" selection-start-line="123" selection-start-column="53" selection-end-line="123" selection-end-column="68" />
+        <state relative-caret-position="328">
+          <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="37" />
           <folding />
         </state>
       </provider>

@@ -180,35 +180,53 @@ contract('RPMCoin', function (accounts) {
 
   });
 
-  describe("increaseSupply", function () {
+  describe("distributeTokens", function () {
+    let project1Address = accounts[1];
+    let project2Address = accounts[2];
 
     it("not allowed if not owner", function () {
       var instance;
 
       return RPMCoin.deployed().then(function (_instance) {
         instance = _instance;
-        return instance.increaseSupply(2000, accounts[1], {from: accounts[1]});
+        return instance.distributeTokens(3000, {from: accounts[1]});
       }).then(assert.fail).catch(catchOpcodeErr);
     });
 
-    it("increases supply", function () {
+    it("distributes tokens", function () {
       var instance;
 
       return RPMCoin.deployed().then(function (_instance) {
         instance = _instance;
-        return instance.balanceOf.call(accounts[0]);
-      }).then(function (balance) {
-        assert.equal(balance.toNumber(), 6000, "Initial Balance invalid");
-      }).then(function () {
-        return instance.increaseSupply(2000, accounts[0], {from: accounts[0]});
+        return instance.distributeTokens(3000,  {from: accounts[0]});
       }).then(function () {
         return instance.totalSupply.call();
       }).then(function (totalSupply) {
-        assert.equal(totalSupply.toNumber(), 12000, "Total Supply not increased properly");
+        assert.equal(totalSupply.toNumber(), 15000, "Total Supply not increased properly");
       }).then(function () {
         return instance.balanceOf.call(accounts[0]);
       }).then(function (balance) {
-        assert.equal(balance.toNumber(), 8000, "Balance not increased properly");
+        assert.equal(balance.toNumber(), 8000, "Balance invalid");
+      }).then(function () {
+        return instance.balanceOf.call(accounts[1]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 6000, "Balance invalid");
+      }).then(function () {
+        return instance.balanceOf.call(accounts[2]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 1000, "Balance invalid");
+      }).then(function () {
+        return instance.upvotesReceivedThisWeek.call(project1Address);
+      }).then(function (votes) {
+        assert.equal(votes.toNumber(), 0, "Upvotes should be reset");
+      }).then(function () {
+        return instance.upvotesReceivedThisWeek.call(project2Address);
+      }).then(function (votes) {
+        assert.equal(votes.toNumber(), 0, "Upvotes should be reset");
+      }).then(function () {
+        return instance.totalUpvotesReceivedThisWeek.call();
+      }).then(function (totalVotes) {
+        assert.equal(totalVotes.toNumber(), 0, "Total Upvotes not reset properly");
       });
     });
 
