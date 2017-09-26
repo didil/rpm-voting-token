@@ -233,4 +233,36 @@ contract('RPMCoin', function (accounts) {
   });
 
 
+  describe("burn", function () {
+
+    it("not allowed if not owner", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.burn(1000, {from: accounts[1]});
+      }).then(assert.fail).catch(catchOpcodeErr);
+    });
+
+    it("burn", function () {
+      var instance;
+
+      return RPMCoin.deployed().then(function (_instance) {
+        instance = _instance;
+        return instance.burn(1000, {from: accounts[0]});
+      }).then(function () {
+        return instance.totalSupply.call();
+      }).then(function (totalSupply) {
+        assert.equal(totalSupply.toNumber(), 14000, "Total Supply not decreased properly");
+      }).then(function () {
+        return instance.balanceOf.call(accounts[0]);
+      }).then(function (balance) {
+        assert.equal(balance.toNumber(), 7000, "Balance not decreased properly");
+      });
+    });
+
+  });
+
+
+
 });

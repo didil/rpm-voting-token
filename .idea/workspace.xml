@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e64578e-3d48-47b0-9641-a8d685df65df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contracts/RPMCoin.sol" afterPath="$PROJECT_DIR$/contracts/RPMCoin.sol" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rpmcoin.js" afterPath="$PROJECT_DIR$/test/rpmcoin.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,21 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RPMCoin.sol" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RPMCoin.sol" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contracts/RPMCoin.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="35" />
+            <state relative-caret-position="1170">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rpmcoin.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rpmcoin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/rpmcoin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="37" />
+            <state relative-caret-position="358">
+              <caret line="261" column="6" lean-forward="false" selection-start-line="261" selection-start-column="6" selection-end-line="261" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -159,8 +161,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.eslintignore" />
         <option value="$PROJECT_DIR$/contracts/StandardToken.sol" />
-        <option value="$PROJECT_DIR$/contracts/RPMCoin.sol" />
         <option value="$PROJECT_DIR$/test/rpmcoin.js" />
+        <option value="$PROJECT_DIR$/contracts/RPMCoin.sol" />
       </list>
     </option>
   </component>
@@ -270,12 +272,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506004592324</updated>
       <workItem from="1506004593554" duration="5160000" />
-      <workItem from="1506331661602" duration="17619000" />
+      <workItem from="1506331661602" duration="18523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22779000" />
+    <option name="totallyTimeSpent" value="23683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -534,18 +536,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/RPMCoin.sol">
+    <entry file="file://$PROJECT_DIR$/test/rpmcoin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="35" />
+        <state relative-caret-position="358">
+          <caret line="261" column="6" lean-forward="false" selection-start-line="261" selection-start-column="6" selection-end-line="261" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/rpmcoin.js">
+    <entry file="file://$PROJECT_DIR$/contracts/RPMCoin.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="37" />
+        <state relative-caret-position="1170">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,7 @@ import "./StandardToken.sol";
 
 
 contract RPMCoin is StandardToken {
-    address public contractOwner;
+    address public owner;
 
     mapping (address => uint) public votesToUse;
 
@@ -23,16 +23,16 @@ contract RPMCoin is StandardToken {
 
     modifier onlyOwner()
     {
-        require(msg.sender == contractOwner);
+        require(msg.sender == owner);
         _;
     }
 
     function RPMCoin(uint256 _totalSupply) {
         totalSupply = _totalSupply;
-        contractOwner = msg.sender;
+        owner = msg.sender;
 
-        balances[contractOwner] = totalSupply;
-        addVoterAddress(contractOwner);
+        balances[owner] = totalSupply;
+        addVoterAddress(owner);
     }
 
     function transferAndAddVoterAddress(address _to, uint256 _value){
@@ -73,10 +73,11 @@ contract RPMCoin is StandardToken {
 
     function distributeTokens(uint newTokens) onlyOwner {
         require(newTokens > 0);
+        require(totalUpvotesReceivedThisWeek > 0);
 
-        uint previousOwnerBalance = balanceOf(contractOwner);
+        uint previousOwnerBalance = balanceOf(owner);
 
-        increaseSupply(newTokens, contractOwner);
+        increaseSupply(newTokens, owner);
 
         for (uint i = 0; i < projectAddresses.length; i++) {
             address projectAddress = projectAddresses[i];
@@ -88,7 +89,7 @@ contract RPMCoin is StandardToken {
         totalUpvotesReceivedThisWeek = 0;
 
         // make sure we didn't redistribute more tokens than created
-        assert(balanceOf(contractOwner) >= previousOwnerBalance);
+        assert(balanceOf(owner) >= previousOwnerBalance);
     }
 
     function increaseSupply(uint value, address to) onlyOwner returns (bool) {
@@ -102,5 +103,18 @@ contract RPMCoin is StandardToken {
         require(a + b >= a);
         return a + b;
     }
+
+    function burn(uint value) onlyOwner returns (bool) {
+        totalSupply = safeSub(totalSupply, value);
+        balances[owner] = safeSub(balances[owner], value);
+        Transfer(owner, 0, value);
+        return true;
+    }
+
+    function safeSub(uint a, uint b) internal returns (uint) {
+        assert(b <= a);
+        return a - b;
+    }
+
 
 }
