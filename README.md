@@ -10,7 +10,7 @@ This is the  proof of concept of an ERC20 Voting Token with the following specs 
 
 This project is built using Truffle (with Node v6) and provides mocha unit tests as well as a basic Html/JS frontend to interact with the contract deployed on the local Ethereum blockchain (via testrpc)
 
-##Limitations
+## Limitations
 * distributeVotes/distributeTokens currently use a naive loop which might run out of gas
 * distributeVotes/distributeTokens need to be called periodically by the owner and do not run based on a scheduler
 
